@@ -1,9 +1,9 @@
 ---
-#- name: Constro Deployment
-#  hosts: webservers
+- name: Constro Deployment
+  hosts: all
 #  become: true
 #  become_user: root
-#  tasks:
+  tasks:
 #   - name: GIT PULL
 #     git: repo=git@github.com:ansible/ansible.git dest= /usr/share/nginx/html/share
 #    sudo_user: vagrant
@@ -22,6 +22,7 @@
      
 #   - name: install composer
 #     apt: name=composer state=present update_cache=yes
+
     - name: Updates apt cache
       action: apt update_cache=true    
       
