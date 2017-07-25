@@ -1,8 +1,0 @@
----
-- name: TRIAL PLAYBOOK
-  hosts: all
-  tasks:
-   - name: Updates apt cache
-     action: apt update_cache=true
-  -  name: install eclipse
-     apt: name: eclipse update_cache=true
