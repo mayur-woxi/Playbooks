@@ -1,6 +1,0 @@
-
-- name: TRIAL PLAYBOOK
-  hosts: Trial
-  tasks:
-   - name: Updates apt cache
-     action: apt update_cache=true
