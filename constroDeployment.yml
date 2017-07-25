@@ -2,7 +2,7 @@
 - name: Constro Deployment
   hosts: all
 #  remote_user: mayur
-  sudo: yes
+#  sudo: yes
 #  become: yes
 #  become_user: root
  
@@ -27,5 +27,8 @@
 #     apt: name=composer state=present update_cache=yes
 
     - name: Updates apt cache
-      action: apt update_cache=true    
+      action: apt update_cache=true\
+      become: true
+      become_method: sudo
+      become_user: root    
       
