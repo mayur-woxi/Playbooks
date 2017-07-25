@@ -1,5 +1,5 @@
 - name: Trial rec
-  hosts: Trial
+  hosts: webservers
   become: true
   become_method: sudo
   become_user: root

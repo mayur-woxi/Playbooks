@@ -1,33 +1,28 @@
 ---
 - name: Constro Deployment
   hosts: all
-#  remote_user: mayur
+  remote_user: mayur
 #  sudo: yes
-#  become: yes
-#  become_user: root
+  become: True
+  become_method: sudo
+  become_user: root
+
 
   tasks:
-#   - name: GIT PULL
-#     git: repo=git@github.com:ansible/ansible.git dest= /usr/share/nginx/html/share
-#    sudo_user: vagrant
-#
-#   - name: execute php artisan migrate
-#     command:  chdir=/usr/share/nginx/html/share/mco php artisan migrate
+   - name: GIT PULL
+     git: repo=git@github.com:ansible/ansible.git dest= /usr/share/nginx/html/share
+    sudo_user: vagrant
 
-#   - name: execute command for seeders
-#     command: chdir=/usr/share/nginx/html/share/mco php artisan db:seed #--class=UpdateBillStatusesTableSeeder
+   - name: execute php artisan migrate
+     command:  chdir=/usr/share/nginx/html/share/mco php artisan migrate
 
-#   - name: execute npm run production
-#    shell: chdir=/usr/share/nginx/html/share/mco sudo npm run production
+   - name: execute command for seeders
+     command: chdir=/usr/share/nginx/html/share/mco php artisan db:seed #--class=UpdateBillStatusesTableSeeder
 
-#   - name: execute clear cache
-#     command: chdir=/usr/share/nginx/html/share/mco php artisan cache:clear
+   - name: execute npm run production
+     shell: chdir=/usr/share/nginx/html/share/mco sudo npm run production
 
-#   - name: install composer
-#     apt: name=composer state=present update_cache=yes
-
-    - name: Updates apt cache
-      action: apt update_cache=true
-      become: True
-      become_method: sudo
-      become_user: root
+   - name: execute clear cache
+     command: chdir=/usr/share/nginx/html/share/mco php artisan cache:clear
+   - name: install composer
+     apt: name=composer state=present update_cache=yes
