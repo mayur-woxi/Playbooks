@@ -1,8 +1,8 @@
 - name: Trial rec
-  hosts: webservers
+  hosts: all
   become: true
   become_method: sudo
   become_user: root
   tasks:
     - name: update_cache
-      action: update_cache=true
+      apt: update_cache=true
