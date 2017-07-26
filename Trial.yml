@@ -6,4 +6,4 @@
     #- name: update_cache
     #  apt: update_cache=true
     - name: ls
-    - command: chdir= /home/mayur/Playbooks ls
+    - command: ls
