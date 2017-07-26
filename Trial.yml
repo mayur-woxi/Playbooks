@@ -5,4 +5,4 @@
   become_user: root
   tasks:
     - name: update_cache
-      action: update_cache=true
+      apt: update_cache=true
