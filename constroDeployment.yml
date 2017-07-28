@@ -12,13 +12,12 @@
      git:
        repo: git@github.com:woxiprogrammers/mco.git
        dest: chdir= /usr/share/nginx/html/share/mco
-       accept_hostkey: yes
        update: yes
-      # sudo_user: vagrant
+       register: app_checkout_result
 
-   - name: execute php artisan migrate
-     #command:  chdir= /usr/share/nginx/html/share/mco/
-     command: 'php artisan migrate'
+   - name: Run migration job
+     command: php artisan migrate
+     when: app_checkout_result.changed
 
 
 
