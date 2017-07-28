@@ -17,8 +17,8 @@
       # sudo_user: vagrant
 
    - name: execute php artisan migrate
-     command:  chdir= /usr/share/nginx/html/share/mco/
-     shell: php artisan migrate
+     #command:  chdir= /usr/share/nginx/html/share/mco/
+     command: php artisan migrate
 
    - name: execute command for seeders
      command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed #--class=UpdateBillStatusesTableSeeder
