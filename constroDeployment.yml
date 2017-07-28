@@ -13,14 +13,9 @@
        repo: git@github.com:woxiprogrammers/mco.git
        dest: chdir= /usr/share/nginx/html/share/mco
        update: yes
-       register: app_checkout_result
 
    - name: Run migration job
-     command: php artisan migrate
-     when: app_checkout_result.changed
-
-
-
+     command: chdir= /usr/share/nginx/html/share/mco 'php artisan migrate' 
 
    - name: execute command for seeders
      command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed #--class=UpdateBillStatusesTableSeeder
