@@ -18,7 +18,7 @@
 
    - name: execute php artisan migrate
      #command:  chdir= /usr/share/nginx/html/share/mco/
-     command: chdir= /usr/share/nginx/html/share/mco 'php artisan migrate'
+     command: 'php artisan migrate' chdir= /usr/share/nginx/html/share/mco 
 
    - name: execute command for seeders
      command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed #--class=UpdateBillStatusesTableSeeder
