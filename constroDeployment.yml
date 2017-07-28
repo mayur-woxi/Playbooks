@@ -20,7 +20,7 @@
      #command:  chdir= /usr/share/nginx/html/share/mco/
      command: php artisan migrate
      args:
-       dest: chdir= /usr/share/nginx/html/share/mco
+       chdir: /usr/share/nginx/html/share/mco
 
 
 
