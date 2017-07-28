@@ -12,10 +12,13 @@
      git:
        repo: git@github.com:woxiprogrammers/mco.git
        dest: chdir= /usr/share/nginx/html/share/mco
+       accept_hostkey: yes
        update: yes
+      # sudo_user: vagrant
 
-   - name: Run migration job
-     command: chdir= /usr/share/nginx/html/share/mco 'php artisan migrate' 
+   - name: execute php artisan migrate
+     #command:  chdir= /usr/share/nginx/html/share/mco/
+     command: chdir= /usr/share/nginx/html/share/mco 'php artisan migrate'
 
    - name: execute command for seeders
      command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed #--class=UpdateBillStatusesTableSeeder
