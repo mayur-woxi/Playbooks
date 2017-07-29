@@ -19,6 +19,7 @@
      shell: 'php artisan migrate'
      args:
        chdir:  chdir= /usr/share/nginx/html/share/mco/
+       executable: /usr/bin/php
 
    - name: execute command for seeders
      command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed
