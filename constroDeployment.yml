@@ -16,7 +16,7 @@
        update: yes
 
    - name: execute php artisan migrate
-     command: 'php artisan migrate'
+     shell: 'php artisan migrate'
      args:
        chdir:  chdir= /usr/share/nginx/html/share/mco/
 
