@@ -14,11 +14,10 @@
        dest: chdir= /usr/share/nginx/html/share/mco
        accept_hostkey: yes
        update: yes
-      # sudo_user: vagrant
 
    - name: execute php artisan migrate
-     #command:  chdir= /usr/share/nginx/html/share/mco/
-     command: 'php artisan migrate' chdir= /usr/share/nginx/html/share/mco 
+     dest:  chdir= /usr/share/nginx/html/share/mco/
+     command: 'php artisan migrate' #chdir= /usr/share/nginx/html/share/mco 
 
    - name: execute command for seeders
      command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed #--class=UpdateBillStatusesTableSeeder
