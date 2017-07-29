@@ -16,17 +16,14 @@
        update: yes
 
    - name: execute php artisan migrate
-     dest:  chdir= /usr/share/nginx/html/share/mco/
-     command: 'php artisan migrate' #chdir= /usr/share/nginx/html/share/mco 
+     command: 'php artisan migrate'
+       dest:  chdir= /usr/share/nginx/html/share/mco/  
 
    - name: execute command for seeders
-     command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed #--class=UpdateBillStatusesTableSeeder
+     command: chdir= /usr/share/nginx/html/share/mco/ php artisan db:seed
 
    - name: execute npm run production
      shell: chdir= /usr/share/nginx/html/share/mco/ sudo npm run production
 
    - name: execute clear cache
      command: chdir= /usr/share/nginx/html/share/mco/ php artisan cache:clear
-
-   #- name: install composer
-    # apt: name=composer state=present update_cache=yes
