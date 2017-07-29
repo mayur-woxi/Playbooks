@@ -4,16 +4,17 @@
   remote_user: mayur
 #  sudo: yes
   become_method: sudo
-  become_user: vagrant
+  become_user: root
 
 
   tasks:
    - name: GIT PULL
      git:
        repo: git@github.com:woxiprogrammers/mco.git
-       dest: /usr/share/nginx/html/share/mco
+       dest: chdir= /usr/share/nginx/html/share/mco
        accept_hostkey: yes
        update: yes
+
 
    - name: execute php artisan migrate
      command: php artisan migrate
