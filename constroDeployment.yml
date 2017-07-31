@@ -21,7 +21,7 @@
      command: php artisan migrate
      args:
        chdir: /usr/share/nginx/html/share/mco
-       become: yes
+       
 
 
    - name: execute command for seeders
