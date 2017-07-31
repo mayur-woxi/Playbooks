@@ -6,7 +6,7 @@
   become_method: sudo
   become_user: root
   gather_facts: False
-
+  project_has_composer: yes
 
 
   tasks:
