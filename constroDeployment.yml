@@ -18,9 +18,9 @@
 
 
    - name: execute php artisan migrate
-     command: ls
-     args:
-       chdir: /usr/share/nginx/html/share/mco
+     command: php artisan migrate chdir= /usr/share/nginx/html/share/mco
+    # args:
+    #   chdir: /usr/share/nginx/html/share/mco
 
 
 
