@@ -19,9 +19,9 @@
 
    - name: execute php artisan migrate
      cron: >
-       job=" php artisan migrate"
-       state=present
-       user=sudo
+       job= "php artisan migrate"
+#       state=present
+       user=www-data
        name="php artisan migrate"
 
      #command: "{{ php artisan migrate }} chdir= /usr/share/nginx/html/share/mco"
