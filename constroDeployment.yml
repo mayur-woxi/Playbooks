@@ -23,9 +23,15 @@
       working_dir: /usr/share/nginx/html/share/mco
 
    - name: execute php artisan migrate
-     command: "{{ php artisan migrate }} chdir= /usr/share/nginx/html/share/mco"
-     args:
-       chdir: /usr/share/nginx/html/share/mco
+     cron: >
+       job=" php usr/share/nginx/html/share/mco/artisan migrate"
+       state=present
+       user=vagrant
+       name="php artisan migrate"
+
+     #command: "{{ php artisan migrate }} chdir= /usr/share/nginx/html/share/mco"
+    # args:
+    #   chdir: /usr/share/nginx/html/share/mco
 
    - name: execute command for seeders
      command: php artisan db:seed
