@@ -8,6 +8,7 @@
   gather_facts: False
 
 
+
   tasks:
    - name: GIT PULL
      git:
@@ -20,7 +21,7 @@
      cron: >
        job=" php usr/share/nginx/html/share/mco/artisan migrate"
        state=present
-       user=vagrant
+       user=sudo
        name="php artisan migrate"
 
      #command: "{{ php artisan migrate }} chdir= /usr/share/nginx/html/share/mco"
