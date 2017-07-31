@@ -19,8 +19,8 @@
     # when:
 
   - composer:
-    command: php artisan migrate
-    working_dir: /usr/share/nginx/html/share/mco
+      command: php artisan migrate
+      working_dir: /usr/share/nginx/html/share/mco
 
   # - name: execute php artisan migrate
     # command: "{{ php artisan migrate }} chdir= /usr/share/nginx/html/share/mco"
