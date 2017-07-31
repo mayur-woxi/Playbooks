@@ -20,7 +20,7 @@
    - name: execute php artisan migrate
      cron: >
        job= "php artisan migrate"
-#       state=present
+       state=present
        user=www-data
        name="php artisan migrate"
 
