@@ -27,8 +27,6 @@
      args:
        chdir: /usr/share/nginx/html/share/mco
 
-
-
    - name: execute command for seeders
      command: php artisan db:seed
      args:
