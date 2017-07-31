@@ -18,10 +18,10 @@
 
 
    - name: execute php artisan migrate
-     command: php artisan migrate
+     command: php /usr/share/nginx/html/share/mco/artisan migrate
      args:
        chdir: /usr/share/nginx/html/share/mco
-       
+
 
 
    - name: execute command for seeders
