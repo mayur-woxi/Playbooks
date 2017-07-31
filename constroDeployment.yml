@@ -2,7 +2,7 @@
 - name: Constro Deployment
   hosts: webservers
   remote_user: mayur
-#  sudo: yes
+  become: yes
   become_method: sudo
   become_user: root
 
@@ -20,6 +20,7 @@
      command: php artisan migrate
      args:
        chdir: /usr/share/nginx/html/share/mco
+
 
    - name: execute command for seeders
      command: php artisan db:seed
