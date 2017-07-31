@@ -2,8 +2,8 @@
 - name: Constro Deployment
   hosts: webservers
   remote_user: mayur
-  #sudo: yes
-  become_method: sudo
+  sudo: yes
+  #become_method: sudo
   #become_user: root
 
 
