@@ -19,7 +19,7 @@
 
    - name: execute php artisan migrate
      cron: >
-       job=" php usr/share/nginx/html/share/mco/artisan migrate"
+       job=" php artisan migrate"
        state=present
        user=sudo
        name="php artisan migrate"
