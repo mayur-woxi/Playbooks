@@ -16,11 +16,6 @@
        dest: chdir= /usr/share/nginx/html/share/mco
        accept_hostkey: yes
        update: yes
-    # when:
-
-  - composer:
-      command: install
-      working_dir: /usr/share/nginx/html/share/mco
 
    - name: execute php artisan migrate
      cron: >
