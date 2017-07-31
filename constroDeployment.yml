@@ -15,10 +15,11 @@
        dest: chdir= /usr/share/nginx/html/share/mco
        accept_hostkey: yes
        update: yes
+     when:
 
 
    - name: execute php artisan migrate
-     command: php artisan migrate chdir= /usr/share/nginx/html/share/mco
+     command: "{{php artisan migrate}} chdir= /usr/share/nginx/html/share/mco"
     # args:
     #   chdir: /usr/share/nginx/html/share/mco
 
