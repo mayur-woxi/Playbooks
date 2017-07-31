@@ -3,7 +3,7 @@
   hosts: webservers
   remote_user: mayur
   #sudo: yes
-  
+
   become_method: sudo
   become_user: root
   gather_facts: False
@@ -19,15 +19,10 @@
        update: yes
 
    - name: execute php artisan migrate
-     cron: >
-       job=" php artisan migrate"
-       state=present
-       user=www-data
-       name="php artisan migrate"
-
-     #command: "{{ php artisan migrate }} chdir= /usr/share/nginx/html/share/mco"
+     command: chdir=" /usr/share/nginx/html/share/mco" php artisan migrate
     # args:
     #   chdir: /usr/share/nginx/html/share/mco
+
 
    - name: execute command for seeders
      command: php artisan db:seed
